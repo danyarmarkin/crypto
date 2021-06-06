@@ -3,7 +3,7 @@ package com.danyarmarkin.crypto;
 import java.util.ArrayList;
 
 public class Chain {
-    private ArrayList<Block> blocks;
+    private final ArrayList<Block> blocks;
     private Block currentBlock;
 
     public Chain() {

@@ -3,8 +3,8 @@ package com.danyarmarkin.crypto;
 import java.util.Random;
 
 public class Mine extends Thread{
-    private User user;
-    private Chain chain;
+    private final User user;
+    private final Chain chain;
     private boolean started;
     Random random;
 
