@@ -18,6 +18,7 @@ public class Main {
         while (true) {
             Scanner scanner = new Scanner(System.in);
             String command  = scanner.next();
+//            System.out.println(Integer.toBinaryString(command.hashCode()));
             long id;
             switch (command){
                 case "reg":

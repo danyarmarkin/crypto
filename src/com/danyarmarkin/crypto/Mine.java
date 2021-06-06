@@ -17,16 +17,21 @@ public class Mine extends Thread{
     @Override
     public void run() {
         super.run();
-
+        Block b = chain.getCurrentBlock();
+        String t1 = b.getText();
+        String t = b.getText();
+//        System.out.println(t1);
         while (started) {
-            Block b = chain.getCurrentBlock();
-            String t = b.getText();
+            b = chain.getCurrentBlock();
+            if (!b.getText().equals(t1)) {
+                t1 = t = b.getText();
+//                System.out.println(t1);
+            }
             int i = random.nextInt(255);
             char c = (char) i;
             t += c;
             String hash = Integer.toBinaryString(t.hashCode());
-            if (hash.length() < 8) continue;
-            if (hash.substring(hash.length() - 7).equals("0000000")) {
+            if (hash.length() <= 17) {
                 b.setText(t);
                 chain.add(b, user.getId());
                 user.addCoins(1);

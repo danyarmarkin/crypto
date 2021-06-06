@@ -21,6 +21,7 @@ public class Block {
         if (notes.size() == 0) {
             note.addText(text);
             notes.add(note);
+            text = note.getText();
             return;
         }
         String t = String.valueOf(notes.get(notes.size() - 1).getHash());
